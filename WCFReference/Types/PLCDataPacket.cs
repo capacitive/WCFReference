@@ -8,13 +8,6 @@ using System.Threading.Tasks;
 namespace WCFReferenceService
 {
     [DataContract]
-    public class PLCDataPacketConfigurationSet
-    {
-        [DataMember]
-        public Dictionary<string, PLCDataPacketConfiguration> PLCDataPacketConfigurations { get; set; }
-    }
-
-    [DataContract]
     public class PLCDataPacketConfiguration
     {
         [DataMember]
@@ -27,6 +20,8 @@ namespace WCFReferenceService
         [DataMember]
         public bool IsHeaderOrFooter { get; set; }
         [DataMember]
+        public bool ContainsBits { get; set; }
+        [DataMember]
         public int ByteIndex { get; set; }
         [DataMember]
         public List<DataBit> Bits { get; set; }
@@ -35,9 +30,11 @@ namespace WCFReferenceService
     [DataContract]
     public class DataBit
     {
-
+        [DataMember]
         public List<int> AGVTags { get; set; }
+        [DataMember]
         public int BitIndex { get; set; }
+        [DataMember]
         public string Description { get; set; }
     }
 }

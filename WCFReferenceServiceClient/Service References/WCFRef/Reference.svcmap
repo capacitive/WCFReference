@@ -26,7 +26,7 @@
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="03fffac5-8801-4c28-a7ca-041d84557dca" SourceId="1" SourceUrl="http://localhost:8878/WCFReferenceService/MEX" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="93da191d-29a3-499a-8f90-b1214687869b" SourceId="1" SourceUrl="http://localhost:8878/WCFReferenceService/MEX" />
     <MetadataFile FileName="WCFReferenceService.xsd" MetadataType="Schema" ID="d6b5629c-995d-49fa-8dbf-150fe781eb78" SourceId="1" SourceUrl="http://localhost:8878/WCFReferenceService/MEX" />
-    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="05599525-4b57-4f05-855c-c7d9972a0aed" SourceId="1" SourceUrl="http://localhost:8878/WCFReferenceService/MEX" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="b38a4650-660d-4eab-87e9-e14d9726117e" SourceId="1" SourceUrl="http://localhost:8878/WCFReferenceService/MEX" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

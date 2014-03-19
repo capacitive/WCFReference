@@ -10,7 +10,7 @@ namespace WCFReferenceService
 {
     public class WCFServiceHost : IWindowsService
     {
-        ServiceHost host1 = new ServiceHost(typeof(WCFService));
+        ServiceHost host1 = new ServiceHost(typeof(PLCDataService));
         //ServiceHost host2 = new ServiceHost(typeof(WCFService));
 
         public ApplicationContext AppContext { get; set; } 

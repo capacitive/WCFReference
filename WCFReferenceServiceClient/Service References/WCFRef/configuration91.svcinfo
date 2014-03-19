@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="3S7o6aI4Uqdn+wfdOHpsQvYH35M=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="vDjnXrSHCeSYO6yDOjrVys9EMEA=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="HTTPEndpoint">
       <properties>
@@ -227,7 +227,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="TCPEndpoint" contract="WCFRef.IServiceContract" bindingType="netTcpBinding" address="net.tcp://localhost:9000/WCFReferenceService/" bindingConfiguration="TCPEndpoint">
+    <endpoint name="TCPEndpoint" contract="WCFRef.IPLCDataServiceContract" bindingType="netTcpBinding" address="net.tcp://localhost:9000/WCFReferenceService/" bindingConfiguration="TCPEndpoint">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>net.tcp://localhost:9000/WCFReferenceService/</serializedValue>
@@ -242,7 +242,7 @@
           <serializedValue>TCPEndpoint</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WCFRef.IServiceContract</serializedValue>
+          <serializedValue>WCFRef.IPLCDataServiceContract</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -312,7 +312,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="HTTPEndpoint" contract="WCFRef.IServiceContract" bindingType="basicHttpBinding" address="http://localhost:9001/WCFReferenceService/" bindingConfiguration="HTTPEndpoint">
+    <endpoint name="HTTPEndpoint" contract="WCFRef.IPLCDataServiceContract" bindingType="basicHttpBinding" address="http://localhost:9001/WCFReferenceService/" bindingConfiguration="HTTPEndpoint">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:9001/WCFReferenceService/</serializedValue>
@@ -327,7 +327,7 @@
           <serializedValue>HTTPEndpoint</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WCFRef.IServiceContract</serializedValue>
+          <serializedValue>WCFRef.IPLCDataServiceContract</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>

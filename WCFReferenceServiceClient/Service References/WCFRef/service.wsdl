@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WCFService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PLCDataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsp:Policy wsu:Id="TCPEndpoint_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -37,53 +37,33 @@
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IServiceContract_GetData_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetData" />
+  <wsdl:message name="IPLCDataServiceContract_StorePLCDataPacketConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:StorePLCDataPacketConfiguration" />
   </wsdl:message>
-  <wsdl:message name="IServiceContract_GetData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  <wsdl:message name="IPLCDataServiceContract_StorePLCDataPacketConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StorePLCDataPacketConfigurationResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceContract_GetDataUsingDataContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  <wsdl:message name="IPLCDataServiceContract_GetPLCDataPacketConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPLCDataPacketConfiguration" />
   </wsdl:message>
-  <wsdl:message name="IServiceContract_GetDataUsingDataContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  <wsdl:message name="IPLCDataServiceContract_GetPLCDataPacketConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPLCDataPacketConfigurationResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceContract_StorePLCDataPacketDecoderConfiguration_InputMessage">
-    <wsdl:part name="parameters" element="tns:StorePLCDataPacketDecoderConfiguration" />
-  </wsdl:message>
-  <wsdl:message name="IServiceContract_StorePLCDataPacketDecoderConfiguration_OutputMessage">
-    <wsdl:part name="parameters" element="tns:StorePLCDataPacketDecoderConfigurationResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServiceContract_GetPLCDataPacketDecoderConfiguration_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPLCDataPacketDecoderConfiguration" />
-  </wsdl:message>
-  <wsdl:message name="IServiceContract_GetPLCDataPacketDecoderConfiguration_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPLCDataPacketDecoderConfigurationResponse" />
-  </wsdl:message>
-  <wsdl:portType name="IServiceContract">
-    <wsdl:operation name="GetData">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/GetData" message="tns:IServiceContract_GetData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/GetDataResponse" message="tns:IServiceContract_GetData_OutputMessage" />
+  <wsdl:portType name="IPLCDataServiceContract">
+    <wsdl:operation name="StorePLCDataPacketConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPLCDataServiceContract/StorePLCDataPacketConfiguration" message="tns:IPLCDataServiceContract_StorePLCDataPacketConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPLCDataServiceContract/StorePLCDataPacketConfigurationResponse" message="tns:IPLCDataServiceContract_StorePLCDataPacketConfiguration_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/GetDataUsingDataContract" message="tns:IServiceContract_GetDataUsingDataContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/GetDataUsingDataContractResponse" message="tns:IServiceContract_GetDataUsingDataContract_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="StorePLCDataPacketDecoderConfiguration">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/StorePLCDataPacketDecoderConfiguration" message="tns:IServiceContract_StorePLCDataPacketDecoderConfiguration_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/StorePLCDataPacketDecoderConfigurationResponse" message="tns:IServiceContract_StorePLCDataPacketDecoderConfiguration_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetPLCDataPacketDecoderConfiguration">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/GetPLCDataPacketDecoderConfiguration" message="tns:IServiceContract_GetPLCDataPacketDecoderConfiguration_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/GetPLCDataPacketDecoderConfigurationResponse" message="tns:IServiceContract_GetPLCDataPacketDecoderConfiguration_OutputMessage" />
+    <wsdl:operation name="GetPLCDataPacketConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPLCDataServiceContract/GetPLCDataPacketConfiguration" message="tns:IPLCDataServiceContract_GetPLCDataPacketConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPLCDataServiceContract/GetPLCDataPacketConfigurationResponse" message="tns:IPLCDataServiceContract_GetPLCDataPacketConfiguration_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="TCPEndpoint" type="tns:IServiceContract">
+  <wsdl:binding name="TCPEndpoint" type="tns:IPLCDataServiceContract">
     <wsp:PolicyReference URI="#TCPEndpoint_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="GetData">
-      <soap12:operation soapAction="http://tempuri.org/IServiceContract/GetData" style="document" />
+    <wsdl:operation name="StorePLCDataPacketConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/IPLCDataServiceContract/StorePLCDataPacketConfiguration" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -91,26 +71,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <soap12:operation soapAction="http://tempuri.org/IServiceContract/GetDataUsingDataContract" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="StorePLCDataPacketDecoderConfiguration">
-      <soap12:operation soapAction="http://tempuri.org/IServiceContract/StorePLCDataPacketDecoderConfiguration" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetPLCDataPacketDecoderConfiguration">
-      <soap12:operation soapAction="http://tempuri.org/IServiceContract/GetPLCDataPacketDecoderConfiguration" style="document" />
+    <wsdl:operation name="GetPLCDataPacketConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/IPLCDataServiceContract/GetPLCDataPacketConfiguration" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -119,10 +81,10 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="HTTPEndpoint" type="tns:IServiceContract">
+  <wsdl:binding name="HTTPEndpoint" type="tns:IPLCDataServiceContract">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetData">
-      <soap:operation soapAction="http://tempuri.org/IServiceContract/GetData" style="document" />
+    <wsdl:operation name="StorePLCDataPacketConfiguration">
+      <soap:operation soapAction="http://tempuri.org/IPLCDataServiceContract/StorePLCDataPacketConfiguration" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -130,26 +92,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <soap:operation soapAction="http://tempuri.org/IServiceContract/GetDataUsingDataContract" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="StorePLCDataPacketDecoderConfiguration">
-      <soap:operation soapAction="http://tempuri.org/IServiceContract/StorePLCDataPacketDecoderConfiguration" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetPLCDataPacketDecoderConfiguration">
-      <soap:operation soapAction="http://tempuri.org/IServiceContract/GetPLCDataPacketDecoderConfiguration" style="document" />
+    <wsdl:operation name="GetPLCDataPacketConfiguration">
+      <soap:operation soapAction="http://tempuri.org/IPLCDataServiceContract/GetPLCDataPacketConfiguration" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -158,7 +102,7 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="WCFService">
+  <wsdl:service name="PLCDataService">
     <wsdl:port name="TCPEndpoint" binding="tns:TCPEndpoint">
       <soap12:address location="net.tcp://localhost:9000/WCFReferenceService/" />
       <wsa10:EndpointReference>

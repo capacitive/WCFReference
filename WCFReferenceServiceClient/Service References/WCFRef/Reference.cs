@@ -15,70 +15,9 @@ namespace WCFReferenceServiceClient.WCFRef {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/WCFReferenceService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PLCDataPacketConfiguration", Namespace="http://schemas.datacontract.org/2004/07/WCFReferenceService")]
     [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
-            get {
-                return this.BoolValueField;
-            }
-            set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
-            get {
-                return this.StringValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PLCDataPacket", Namespace="http://schemas.datacontract.org/2004/07/WCFReferenceService")]
-    [System.SerializableAttribute()]
-    public partial class PLCDataPacket : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class PLCDataPacketConfiguration : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -135,6 +74,9 @@ namespace WCFReferenceServiceClient.WCFRef {
         private int ByteIndexField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ContainsBitsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsHeaderOrFooterField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -169,6 +111,19 @@ namespace WCFReferenceServiceClient.WCFRef {
                 if ((this.ByteIndexField.Equals(value) != true)) {
                     this.ByteIndexField = value;
                     this.RaisePropertyChanged("ByteIndex");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ContainsBits {
+            get {
+                return this.ContainsBitsField;
+            }
+            set {
+                if ((this.ContainsBitsField.Equals(value) != true)) {
+                    this.ContainsBitsField = value;
+                    this.RaisePropertyChanged("ContainsBits");
                 }
             }
         }
@@ -274,93 +229,65 @@ namespace WCFReferenceServiceClient.WCFRef {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFRef.IServiceContract")]
-    public interface IServiceContract {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFRef.IPLCDataServiceContract")]
+    public interface IPLCDataServiceContract {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/GetData", ReplyAction="http://tempuri.org/IServiceContract/GetDataResponse")]
-        string GetData(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/GetData", ReplyAction="http://tempuri.org/IServiceContract/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IServiceContract/GetDataUsingDataContractResponse")]
-        WCFReferenceServiceClient.WCFRef.CompositeType GetDataUsingDataContract(WCFReferenceServiceClient.WCFRef.CompositeType composite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IServiceContract/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<WCFReferenceServiceClient.WCFRef.CompositeType> GetDataUsingDataContractAsync(WCFReferenceServiceClient.WCFRef.CompositeType composite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/StorePLCDataPacketDecoderConfiguration", ReplyAction="http://tempuri.org/IServiceContract/StorePLCDataPacketDecoderConfigurationRespons" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPLCDataServiceContract/StorePLCDataPacketConfiguration", ReplyAction="http://tempuri.org/IPLCDataServiceContract/StorePLCDataPacketConfigurationRespons" +
             "e")]
-        void StorePLCDataPacketDecoderConfiguration(WCFReferenceServiceClient.WCFRef.PLCDataPacket PLCPacket);
+        void StorePLCDataPacketConfiguration(WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration PLCPacket, string configurationName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/StorePLCDataPacketDecoderConfiguration", ReplyAction="http://tempuri.org/IServiceContract/StorePLCDataPacketDecoderConfigurationRespons" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPLCDataServiceContract/StorePLCDataPacketConfiguration", ReplyAction="http://tempuri.org/IPLCDataServiceContract/StorePLCDataPacketConfigurationRespons" +
             "e")]
-        System.Threading.Tasks.Task StorePLCDataPacketDecoderConfigurationAsync(WCFReferenceServiceClient.WCFRef.PLCDataPacket PLCPacket);
+        System.Threading.Tasks.Task StorePLCDataPacketConfigurationAsync(WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration PLCPacket, string configurationName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/GetPLCDataPacketDecoderConfiguration", ReplyAction="http://tempuri.org/IServiceContract/GetPLCDataPacketDecoderConfigurationResponse")]
-        WCFReferenceServiceClient.WCFRef.PLCDataPacket GetPLCDataPacketDecoderConfiguration(string PLCDataPacketDecoderName);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPLCDataServiceContract/GetPLCDataPacketConfiguration", ReplyAction="http://tempuri.org/IPLCDataServiceContract/GetPLCDataPacketConfigurationResponse")]
+        WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration GetPLCDataPacketConfiguration(string configurationName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/GetPLCDataPacketDecoderConfiguration", ReplyAction="http://tempuri.org/IServiceContract/GetPLCDataPacketDecoderConfigurationResponse")]
-        System.Threading.Tasks.Task<WCFReferenceServiceClient.WCFRef.PLCDataPacket> GetPLCDataPacketDecoderConfigurationAsync(string PLCDataPacketDecoderName);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPLCDataServiceContract/GetPLCDataPacketConfiguration", ReplyAction="http://tempuri.org/IPLCDataServiceContract/GetPLCDataPacketConfigurationResponse")]
+        System.Threading.Tasks.Task<WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration> GetPLCDataPacketConfigurationAsync(string configurationName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceContractChannel : WCFReferenceServiceClient.WCFRef.IServiceContract, System.ServiceModel.IClientChannel {
+    public interface IPLCDataServiceContractChannel : WCFReferenceServiceClient.WCFRef.IPLCDataServiceContract, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceContractClient : System.ServiceModel.ClientBase<WCFReferenceServiceClient.WCFRef.IServiceContract>, WCFReferenceServiceClient.WCFRef.IServiceContract {
+    public partial class PLCDataServiceContractClient : System.ServiceModel.ClientBase<WCFReferenceServiceClient.WCFRef.IPLCDataServiceContract>, WCFReferenceServiceClient.WCFRef.IPLCDataServiceContract {
         
-        public ServiceContractClient() {
+        public PLCDataServiceContractClient() {
         }
         
-        public ServiceContractClient(string endpointConfigurationName) : 
+        public PLCDataServiceContractClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ServiceContractClient(string endpointConfigurationName, string remoteAddress) : 
+        public PLCDataServiceContractClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServiceContractClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public PLCDataServiceContractClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServiceContractClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public PLCDataServiceContractClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
+        public void StorePLCDataPacketConfiguration(WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration PLCPacket, string configurationName) {
+            base.Channel.StorePLCDataPacketConfiguration(PLCPacket, configurationName);
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
+        public System.Threading.Tasks.Task StorePLCDataPacketConfigurationAsync(WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration PLCPacket, string configurationName) {
+            return base.Channel.StorePLCDataPacketConfigurationAsync(PLCPacket, configurationName);
         }
         
-        public WCFReferenceServiceClient.WCFRef.CompositeType GetDataUsingDataContract(WCFReferenceServiceClient.WCFRef.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
+        public WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration GetPLCDataPacketConfiguration(string configurationName) {
+            return base.Channel.GetPLCDataPacketConfiguration(configurationName);
         }
         
-        public System.Threading.Tasks.Task<WCFReferenceServiceClient.WCFRef.CompositeType> GetDataUsingDataContractAsync(WCFReferenceServiceClient.WCFRef.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
-        }
-        
-        public void StorePLCDataPacketDecoderConfiguration(WCFReferenceServiceClient.WCFRef.PLCDataPacket PLCPacket) {
-            base.Channel.StorePLCDataPacketDecoderConfiguration(PLCPacket);
-        }
-        
-        public System.Threading.Tasks.Task StorePLCDataPacketDecoderConfigurationAsync(WCFReferenceServiceClient.WCFRef.PLCDataPacket PLCPacket) {
-            return base.Channel.StorePLCDataPacketDecoderConfigurationAsync(PLCPacket);
-        }
-        
-        public WCFReferenceServiceClient.WCFRef.PLCDataPacket GetPLCDataPacketDecoderConfiguration(string PLCDataPacketDecoderName) {
-            return base.Channel.GetPLCDataPacketDecoderConfiguration(PLCDataPacketDecoderName);
-        }
-        
-        public System.Threading.Tasks.Task<WCFReferenceServiceClient.WCFRef.PLCDataPacket> GetPLCDataPacketDecoderConfigurationAsync(string PLCDataPacketDecoderName) {
-            return base.Channel.GetPLCDataPacketDecoderConfigurationAsync(PLCDataPacketDecoderName);
+        public System.Threading.Tasks.Task<WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration> GetPLCDataPacketConfigurationAsync(string configurationName) {
+            return base.Channel.GetPLCDataPacketConfigurationAsync(configurationName);
         }
     }
 }

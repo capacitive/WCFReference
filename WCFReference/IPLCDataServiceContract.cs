@@ -9,7 +9,7 @@ namespace WCFReferenceService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IServiceContract" in both code and config file together.
     [ServiceContract]
-    public interface IServiceContract
+    public interface IPLCDataServiceContract
     {
         [OperationContract]
         void StorePLCDataPacketConfiguration(PLCDataPacketConfiguration PLCPacket, string configurationName);
