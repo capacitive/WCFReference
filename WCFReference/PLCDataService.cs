@@ -12,24 +12,31 @@ namespace WCFReferenceService
 {
     public class PLCDataService : IPLCDataServiceContract
     {
-        public void StorePLCDataPacketConfiguration(PLCDataPacketConfiguration PLCPacket, string configurationName)
+        public bool StorePLCDataPacketConfiguration(PLCDataPacketConfiguration PLCPacket, string configurationName)
         {
-            string filePath = String.Format("{0}/{1}.bin", Assembly.GetExecutingAssembly().Location, configurationName);
-
-            if(File.Exists(filePath))
+            try
             {
-                File.Delete(filePath);
+                string filePath = CreateFilePath(configurationName);
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                }
+
+                IFormatter formatter = new BinaryFormatter();
+                Stream stream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None);
+                formatter.Serialize(stream, PLCPacket);
+                stream.Close();
+            }
+            catch {
+                return false;
             }
 
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(configurationName + ".bin", FileMode.Create, FileAccess.Write, FileShare.None);
-            formatter.Serialize(stream, PLCPacket);
-            stream.Close();
+            return true;
         }
 
         public PLCDataPacketConfiguration GetPLCDataPacketConfiguration(string configurationName)
         {
-            string filePath = String.Format("{0}/{1}.bin", Assembly.GetExecutingAssembly().Location, configurationName);
+            string filePath = CreateFilePath(configurationName);
 
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
@@ -37,6 +44,15 @@ namespace WCFReferenceService
             stream.Close();
 
             return packet;
+        }
+
+        private string CreateFilePath(string fileName)
+        {
+            string assemblyLocation = Assembly.GetExecutingAssembly().Location;
+            int endIndex = assemblyLocation.LastIndexOf(@"\");
+
+            string filePath = String.Format("{0}\\{1}.bin", assemblyLocation.Substring(0, endIndex), fileName);
+            return filePath;
         }
     }
 }

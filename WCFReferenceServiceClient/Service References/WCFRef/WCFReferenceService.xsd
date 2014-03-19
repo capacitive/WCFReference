@@ -4,6 +4,7 @@
   <xs:complexType name="PLCDataPacketConfiguration">
     <xs:sequence>
       <xs:element minOccurs="0" name="Bytes" nillable="true" type="tns:ArrayOfDataByte" />
+      <xs:element minOccurs="0" name="IsDecoder" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PLCDataPacketConfiguration" nillable="true" type="tns:PLCDataPacketConfiguration" />

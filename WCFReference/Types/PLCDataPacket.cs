@@ -8,13 +8,17 @@ using System.Threading.Tasks;
 namespace WCFReferenceService
 {
     [DataContract]
+    [Serializable]
     public class PLCDataPacketConfiguration
     {
         [DataMember]
         public List<DataByte> Bytes { get; set; }
+        [DataMember]
+        public bool IsDecoder { get; set; }
     }
 
     [DataContract]
+    [Serializable]
     public class DataByte
     {
         [DataMember]
@@ -28,6 +32,7 @@ namespace WCFReferenceService
     }
 
     [DataContract]
+    [Serializable]
     public class DataBit
     {
         [DataMember]

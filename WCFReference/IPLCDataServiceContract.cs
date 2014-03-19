@@ -12,7 +12,7 @@ namespace WCFReferenceService
     public interface IPLCDataServiceContract
     {
         [OperationContract]
-        void StorePLCDataPacketConfiguration(PLCDataPacketConfiguration PLCPacket, string configurationName);
+        bool StorePLCDataPacketConfiguration(PLCDataPacketConfiguration PLCPacket, string configurationName);
 
         [OperationContract]
         PLCDataPacketConfiguration GetPLCDataPacketConfiguration(string configurationName);

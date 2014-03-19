@@ -25,6 +25,9 @@ namespace WCFReferenceServiceClient.WCFRef {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private WCFReferenceServiceClient.WCFRef.DataByte[] BytesField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsDecoderField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -44,6 +47,19 @@ namespace WCFReferenceServiceClient.WCFRef {
                 if ((object.ReferenceEquals(this.BytesField, value) != true)) {
                     this.BytesField = value;
                     this.RaisePropertyChanged("Bytes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsDecoder {
+            get {
+                return this.IsDecoderField;
+            }
+            set {
+                if ((this.IsDecoderField.Equals(value) != true)) {
+                    this.IsDecoderField = value;
+                    this.RaisePropertyChanged("IsDecoder");
                 }
             }
         }
@@ -234,11 +250,11 @@ namespace WCFReferenceServiceClient.WCFRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPLCDataServiceContract/StorePLCDataPacketConfiguration", ReplyAction="http://tempuri.org/IPLCDataServiceContract/StorePLCDataPacketConfigurationRespons" +
             "e")]
-        void StorePLCDataPacketConfiguration(WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration PLCPacket, string configurationName);
+        bool StorePLCDataPacketConfiguration(WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration PLCPacket, string configurationName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPLCDataServiceContract/StorePLCDataPacketConfiguration", ReplyAction="http://tempuri.org/IPLCDataServiceContract/StorePLCDataPacketConfigurationRespons" +
             "e")]
-        System.Threading.Tasks.Task StorePLCDataPacketConfigurationAsync(WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration PLCPacket, string configurationName);
+        System.Threading.Tasks.Task<bool> StorePLCDataPacketConfigurationAsync(WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration PLCPacket, string configurationName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPLCDataServiceContract/GetPLCDataPacketConfiguration", ReplyAction="http://tempuri.org/IPLCDataServiceContract/GetPLCDataPacketConfigurationResponse")]
         WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration GetPLCDataPacketConfiguration(string configurationName);
@@ -274,11 +290,11 @@ namespace WCFReferenceServiceClient.WCFRef {
                 base(binding, remoteAddress) {
         }
         
-        public void StorePLCDataPacketConfiguration(WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration PLCPacket, string configurationName) {
-            base.Channel.StorePLCDataPacketConfiguration(PLCPacket, configurationName);
+        public bool StorePLCDataPacketConfiguration(WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration PLCPacket, string configurationName) {
+            return base.Channel.StorePLCDataPacketConfiguration(PLCPacket, configurationName);
         }
         
-        public System.Threading.Tasks.Task StorePLCDataPacketConfigurationAsync(WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration PLCPacket, string configurationName) {
+        public System.Threading.Tasks.Task<bool> StorePLCDataPacketConfigurationAsync(WCFReferenceServiceClient.WCFRef.PLCDataPacketConfiguration PLCPacket, string configurationName) {
             return base.Channel.StorePLCDataPacketConfigurationAsync(PLCPacket, configurationName);
         }
         
