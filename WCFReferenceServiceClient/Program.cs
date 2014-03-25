@@ -18,7 +18,7 @@ namespace WCFReferenceServiceClient
 
             List<DataByte> byteList = new List<DataByte>();
 
-            //1b. start adding to the list of Bytes in this packet (start with header - entered by user in case of getting working with packet with no header/footer):
+            //1b. start adding to the list of Bytes in this packet (start with header - entered by user in case of working with headerless packet)
             DataByte dbyteHeader = new DataByte();
             dbyteHeader.IsHeaderOrFooter = true;
             dbyteHeader.ByteIndex = 0;

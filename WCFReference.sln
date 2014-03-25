@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFReferenceService", "WCFReference\WCFReferenceService.csproj", "{53CA61DD-D529-4912-BECE-F65BCE7D57EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFReferenceServiceClient", "WCFReferenceServiceClient\WCFReferenceServiceClient.csproj", "{93333DBB-39ED-40E9-8614-E8188C85BCC1}"
